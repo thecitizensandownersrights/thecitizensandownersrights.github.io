@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Support & Download</title>
+  <meta name="description" content="Download the solution and support the project via Stripe, PayPal, Ko‑fi, or Buy Me a Coffee." />
+  <style>
+    :root {
+      --bg: #0b0d12; --panel:#111520; --text:#e9eef7; --muted:#9fb0c8; --accent:#4aa3ff; --accent-2:#ffd166;
+      --ring: rgba(74,163,255,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:linear-gradient(180deg,#0a0e15,#0c1220);color:var(--text);
+         font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";}
+    .wrap{max-width:980px;margin:0 auto;padding:24px}
+    header{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .title{font-size:clamp(24px,3vw,34px);font-weight:800;letter-spacing:.2px}
+    .badge{font-size:12px;color:var(--muted);border:1px solid #1e2636;border-radius:999px;padding:6px 10px;background:#0f1626}
+    .panel{background:linear-gradient(180deg,#0e1422,#0d1322);border:1px solid #1f2a3f;border-radius:18px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .col-7{grid-column:span 7}
+    .col-5{grid-column:span 5}
+    @media (max-width:900px){.col-7,.col-5{grid-column:1/-1}}
+    h2{margin:0 0 10px;font-size:20px}
+    p{margin:8px 0 16px;color:var(--muted)}
+    .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;padding:12px 16px;border-radius:12px;font-weight:700;border:1px solid #1f2a3f;background:#121a2c;color:var(--text)}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.25);}
+    .btn:focus{outline:3px solid var(--ring)}
+    .btn.primary{background:linear-gradient(180deg,#1b2641,#18233b);border-color:#2a3a5a}
+    .btn.kofi{background:#29abe0;border-color:#29abe0}
+    .btn.kofi span{color:#00121a}
+    .btn.bmc{background:#ffd000;border-color:#ffd000;color:#0f0f0f}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    .hint{font-size:12px;color:var(--muted)}
+    footer{margin:30px 0 10px;color:#7f93b4;font-size:12px}
+    code{background:#0c1527;color:#c9defa;padding:2px 6px;border-radius:6px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="title">Support & Download</div>
+      <div class="badge">Publicly pseudonymous · Secure checkout</div>
+    </header>
+
+    <div class="grid" style="margin-top:18px">
+      <section class="panel col-7" aria-labelledby="download">
+        <h2 id="download">Download the solution</h2>
+        <p>Instant access. If you’d like, add a tip during checkout or afterwards.</p>
+        <!-- If you host the file on GitHub Releases, point here. Example: -->
+        <div class="row">
+          <a class="btn primary" href="https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO/releases/latest" target="_blank" rel="noopener">
+            <span>⬇️ Download on GitHub Releases</span>
+          </a>
+        </div>
+        <p class="hint">You can mirror the download behind a Pay‑what‑you‑want checkout instead—see the Stripe / Ko‑fi buttons.</p>
+      </section>
+
+      <section class="panel col-5" aria-labelledby="tip">
+        <h2 id="tip">Tip jar (one‑tap)</h2>
+        <p>Pick any amount. Cards and wallets supported. No account required for most methods.</p>
+        <div class="row">
+          <!-- Stripe Payment Link (PWYW): create a Payment Link and paste the URL below -->
+          <a class="btn" href="https://buy.stripe.com/YOUR_PAYMENT_LINK_CAD" target="_blank" rel="noopener">💳 Tip via Stripe (CAD)</a>
+          <!-- Duplicate in USD for U.S. visitors if you like -->
+          <a class="btn" href="https://buy.stripe.com/YOUR_PAYMENT_LINK_USD" target="_blank" rel="noopener">💳 Tip via Stripe (USD)</a>
+        </div>
+        <div class="row" style="margin-top:10px">
+          <!-- PayPal: simplest is PayPal.Me; replace with your link. Or use the Donate SDK embed instead. -->
+          <a class="btn" href="https://www.paypal.me/YOUR_PAYPAL_HANDLE" target="_blank" rel="noopener">🅿️ Tip via PayPal</a>
+        </div>
+        <p class="hint">Prefer a floating PayPal Donate button? Use the PayPal Donate SDK instead of a simple link.</p>
+      </section>
+    </div>
+
+    <section class="panel" aria-labelledby="alt">
+      <h2 id="alt">Also available here (links point back to the same checkout)</h2>
+      <p>These pages exist only to capture supporters who already use these platforms. They all redirect back to your single checkout/download.</p>
+      <div class="row">
+        <a class="btn kofi" href="https://ko-fi.com/YOUR_KOFI_USERNAME" target="_blank" rel="noopener"><span>☕ Support on Ko‑fi</span></a>
+        <a class="btn bmc" href="https://www.buymeacoffee.com/YOUR_BMC_USERNAME" target="_blank" rel="noopener"><span>Buy Me a Coffee</span></a>
+      </div>
+      <p class="hint">On those pages, show one big button: <em>“Download & tip here”</em> → this site / your Stripe Payment Link.
+      Don’t upload files there. Keep one canonical download to simplify updates.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="privacy">
+      <h2 id="privacy">Privacy notes</h2>
+      <ul>
+        <li>Payments are processed by Stripe/PayPal. Receipts and card statements may display your business/trading name.</li>
+        <li>Use a business display name on PayPal/Stripe to avoid showing a personal name to supporters.</li>
+      </ul>
+      <p class="hint">Tip: append <code>?utm_source=github&utm_medium=button</code> to links to learn which buttons convert.</p>
+    </section>
+
+    <footer>
+      Built with GitHub Pages. Replace <code>YOUR_…</code> placeholders and push this file to <code>username.github.io</code>.
+    </footer>
+  </div>
+</body>
+</html>
