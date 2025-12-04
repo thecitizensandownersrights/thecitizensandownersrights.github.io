@@ -37,24 +37,42 @@
     }
 
     header.page-header {
-      text-align: center;
       margin-bottom: 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
 
-    header.page-header h1 {
+    .brand-logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 24px;
+      object-fit: contain;
+      border: 1px solid var(--border-subtle);
+      background: #020617;
+      padding: 0.25rem;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.8);
+    }
+
+    .brand-text h1 {
       font-size: clamp(2rem, 4vw, 2.6rem);
       letter-spacing: 0.03em;
       margin-bottom: 0.5rem;
     }
 
-    header.page-header p {
+    .brand-text p {
       color: var(--text-muted);
       font-size: 0.95rem;
+      max-width: 32rem;
     }
 
     main {
       display: grid;
       gap: 1.75rem;
+      margin-top: 0.5rem;
     }
 
     section {
@@ -113,8 +131,7 @@
       gap: 0.4rem;
     }
 
-    .link-list li a,
-    .inline-links a {
+    .link-list li a {
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
@@ -130,8 +147,7 @@
       width: fit-content;
     }
 
-    .link-list li a:hover,
-    .inline-links a:hover {
+    .link-list li a:hover {
       background: rgba(15, 23, 42, 0.9);
       transform: translateY(-1px);
       border-color: rgba(56, 189, 248, 0.7);
@@ -147,17 +163,43 @@
       color: var(--text-muted);
     }
 
-    .inline-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      margin-top: 0.7rem;
-    }
-
     .tip-text {
       color: var(--text-muted);
       font-size: 0.95rem;
       line-height: 1.6;
+    }
+
+    .tip-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+      align-items: center;
+    }
+
+    .tip-buttons a {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 0.1rem;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.8);
+      transition: transform 0.16s ease, box-shadow 0.16s ease,
+        border-color 0.16s ease, background 0.16s ease;
+    }
+
+    .tip-buttons a:hover {
+      transform: translateY(-1px) scale(1.01);
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.25);
+      border-color: rgba(56, 189, 248, 0.7);
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .tip-logo {
+      display: block;
+      height: 48px;
+      width: auto;
+      border-radius: 999px;
     }
 
     footer {
@@ -172,16 +214,36 @@
       section {
         padding: 1.8rem 1.7rem;
       }
+
+      header.page-header {
+        justify-content: flex-start;
+        text-align: left;
+      }
+
+      .brand-text p {
+        text-align: left;
+      }
     }
   </style>
 </head>
 <body>
   <div class="page">
     <header class="page-header">
-      <!-- Replace this with your main page title -->
-      <h1>Project / Solution Title</h1>
-      <!-- Replace this with a short tagline or description of the repository -->
-      <p>Short one-line description of what this GitHub Page / solution is about.</p>
+      <!-- Replace with your own 120x120 logo; you can use a larger source file, it will be shown at 120x120 -->
+      <img
+        src="images/site-logo.png"
+        alt="Site logo"
+        class="brand-logo"
+        width="120"
+        height="120"
+      />
+
+      <div class="brand-text">
+        <!-- Replace this with your main page title -->
+        <h1>Project / Solution Title</h1>
+        <!-- Replace this with a short tagline or description of the repository -->
+        <p>Short one-line description of what this GitHub Page / solution is about.</p>
+      </div>
     </header>
 
     <main>
@@ -247,7 +309,7 @@
         </ul>
       </section>
 
-      <!-- 3) Tip-Jar Section (BMC + Ko-Fi links) -->
+      <!-- 3) Tip-Jar Section (BMC + Ko-Fi links with logo buttons) -->
       <section id="tip-jar">
         <h2>
           Tip-jar
@@ -259,15 +321,23 @@
           using one of the platforms below. Thank you for your support!
         </p>
 
-        <div class="inline-links">
-          <!-- Replace with your actual BMC link -->
+        <div class="tip-buttons">
+          <!-- Replace href with your actual BMC link; replace src with your own BMC logo/button image -->
           <a href="https://www.buymeacoffee.com/yourusername" target="_blank" rel="noopener noreferrer">
-            <span class="link-label">Buy Me a Coffee</span>
+            <img
+              src="images/bmc-button.png"
+              alt="Support on Buy Me a Coffee"
+              class="tip-logo"
+            />
           </a>
 
-          <!-- Replace with your actual Ko-fi link -->
+          <!-- Replace href with your actual Ko-fi link; replace src with your own Ko-fi logo/button image -->
           <a href="https://ko-fi.com/yourusername" target="_blank" rel="noopener noreferrer">
-            <span class="link-label">Ko-fi</span>
+            <img
+              src="images/kofi-button.png"
+              alt="Support on Ko-fi"
+              class="tip-logo"
+            />
           </a>
         </div>
       </section>
