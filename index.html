@@ -155,3 +155,228 @@
 
     .link-label {
       font-weight: 500;
+    }
+
+    .tip-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .tip-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+      align-items: center;
+    }
+
+    .tip-buttons a {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 0.1rem;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.8);
+      transition: transform 0.16s ease, box-shadow 0.16s ease,
+        border-color 0.16s ease, background 0.16s ease;
+    }
+
+    .tip-buttons a:hover {
+      transform: translateY(-1px) scale(1.01);
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.25);
+      border-color: rgba(56, 189, 248, 0.7);
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .tip-logo {
+      display: block;
+      height: 48px;
+      width: auto;
+      border-radius: 999px;
+    }
+
+    footer {
+      margin-top: 2.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      opacity: 0.8;
+    }
+
+    @media (min-width: 768px) {
+      section {
+        padding: 1.8rem 1.7rem;
+      }
+
+      header.page-header {
+        justify-content: flex-start;
+        text-align: left;
+      }
+
+      .brand-text p {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="page-header">
+      <!-- Replace with your own 120x120 logo -->
+      <img
+        src="images/site-logo.png"
+        alt="Site logo"
+        class="brand-logo"
+        width="120"
+        height="120"
+      />
+
+      <div class="brand-text">
+        <!-- Replace this with your main page title -->
+        <h1>Project / Solution Title</h1>
+        <!-- Replace this with a short tagline or description of the repository -->
+        <p>Short one-line description of what this GitHub Page / solution is about.</p>
+      </div>
+    </header>
+
+    <main>
+      <!-- 1) Solution / Description Section -->
+      <section id="solution">
+        <h2>
+          Solution Overview
+          <span class="badge">Section 1</span>
+        </h2>
+        <p class="section-description">
+          <!-- Dummy text – overwrite with your own explanation of the page / solution -->
+          This section is where you describe what this page is about, what problem it solves,
+          and any important background information. Replace this paragraph with your own text.
+        </p>
+      </section>
+
+      <!-- 2) Files Section (4 PDFs + 1 HTML link) -->
+      <section id="files">
+        <h2>
+          Files
+          <span class="badge">Section 2</span>
+        </h2>
+        <p class="section-description">
+          <!-- Dummy text – optional, overwrite or remove -->
+          Below are the main downloadable files related to this project.
+        </p>
+
+        <ul class="link-list">
+          <!-- Replace href and visible labels with your real files; extensions are not shown in text -->
+          <li>
+            <a href="files/document-1.pdf">
+              <span class="link-label">Document 1</span>
+            </a>
+          </li>
+          <li>
+            <a href="files/document-2.pdf">
+              <span class="link-label">Document 2</span>
+            </a>
+          </li>
+          <li>
+            <a href="files/document-3.pdf">
+              <span class="link-label">Document 3</span>
+            </a>
+          </li>
+          <li>
+            <a href="files/document-4.pdf">
+              <span class="link-label">Document 4</span>
+            </a>
+          </li>
+
+          <!-- HTML file link -->
+          <li>
+            <a href="pages/extra-page.html">
+              <span class="link-label">Extra Page</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 3) Tip-Jar Section (BMC + Ko-fi links with logo buttons) -->
+      <section id="tip-jar">
+        <h2>
+          Tip-jar
+          <span class="badge">Section 3</span>
+        </h2>
+        <p class="tip-text">
+          <!-- Dummy text – overwrite this with your own message -->
+          If you find this project useful and would like to support my work, you can leave a tip
+          using one of the platforms below. Thank you for your support!
+        </p>
+
+        <div class="tip-buttons">
+          <!-- BMC button -->
+          <a href="https://www.buymeacoffee.com/yourusername" target="_blank" rel="noopener noreferrer">
+            <img
+              src="images/bmc-button.png"
+              alt="Support on Buy Me a Coffee"
+              class="tip-logo"
+            />
+          </a>
+
+          <!-- Ko-fi button -->
+          <a href="https://ko-fi.com/yourusername" target="_blank" rel="noopener noreferrer">
+            <img
+              src="images/kofi-button.png"
+              alt="Support on Ko-fi"
+              class="tip-logo"
+            />
+          </a>
+        </div>
+      </section>
+
+      <!-- 4) Extra Section (1 HTML + 3 PDFs) -->
+      <section id="extra-files">
+        <h2>
+          Additional Resources
+          <span class="badge">Section 4</span>
+        </h2>
+        <p class="section-description">
+          <!-- Dummy text – overwrite as needed -->
+          This section can be used for additional files, documentation, or related resources.
+        </p>
+
+        <ul class="link-list">
+          <!-- HTML page link -->
+          <li>
+            <a href="pages/another-page.html">
+              <span class="link-label">Another Page</span>
+            </a>
+          </li>
+
+          <!-- PDF links -->
+          <li>
+            <a href="files/appendix-1.pdf">
+              <span class="link-label">Appendix 1</span>
+            </a>
+          </li>
+          <li>
+            <a href="files/appendix-2.pdf">
+              <span class="link-label">Appendix 2</span>
+            </a>
+          </li>
+          <li>
+            <a href="files/appendix-3.pdf">
+              <span class="link-label">Appendix 3</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Your Name or Project. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Auto-update the year in the footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
