@@ -203,6 +203,16 @@
       color: var(--text-muted);
       opacity: 0.8;
     }
+  
+    .footer-links {
+      display: flex;
+      gap: 0.5rem;      /* space between buttons */
+      flex-wrap: wrap;  /* optional: allow wrapping on small screens */
+    }
+    
+    .footer-links .btn {
+      display: inline-block;  /* make sure they behave like inline buttons */
+    }
 
     @media (min-width: 768px) {
       section {
@@ -333,46 +343,14 @@
         </div>
       </section>
 
-      <section id="extra-files">
-        <h2>
-         <!-- header text -->
-        </h2>
-        <p class="section-description">
-           <!--  text -->
-        </p>
-
-        <ul class="link-list">
-          <!-- HTML page link -->
-          <li>
-            <a href="Legal_Notice.html">
-              <span class="link-label">Legal Notice / Impressum</span>
-            </a>
-          </li>
-          <li>
-            <a href="files/appendix-1.pdf">
-              <span class="link-label">Terms of Use</span>
-            </a>
-          </li>
-          <li>
-            <a href="files/appendix-2.pdf">
-              <span class="link-label">Copyright, Licensing</span>
-            </a>
-          </li>
-          <li>
-            <a href="files/appendix-3.pdf">
-              <span class="link-label">Disclaimer</span>
-            </a>
-          <li>
-          <li>
-            <a href="Privacy_Policy.html">
-              <span class="link-label">Privacy Policy</span>
-            </a>
-          <li>
-        </ul>
-      </section>
-    </main>
-
     <footer>
+      <div class="footer-links">
+        <a href="impressum.html" class="btn">Legal Notice / Impressum</a>
+        <a href="copyright.html" class="btn">Copyright, Licensing</a>
+        <a href="terms.html" class="btn">Disclaimer</a>
+        <a href="Privacy_Policy.html" class="btn">Privacy Policy</a>
+      </div>
+
       <p>&copy; <span id="year"></span> The Citizens'/Owners' Rights. All rights reserved.</p>
     </footer>
   </div>
