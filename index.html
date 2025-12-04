@@ -1,103 +1,330 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
+  <title>My GitHub Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Support & Download</title>
-  <meta name="description" content="Download the solution and support the project via Stripe, PayPal, Ko‑fi, or Buy Me a Coffee." />
   <style>
     :root {
-      --bg: #0b0d12; --panel:#111520; --text:#e9eef7; --muted:#9fb0c8; --accent:#4aa3ff; --accent-2:#ffd166;
-      --ring: rgba(74,163,255,.35);
+      --bg: #0f172a;
+      --card-bg: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.1);
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-subtle: #1f2937;
+      --radius: 16px;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;background:linear-gradient(180deg,#0a0e15,#0c1220);color:var(--text);
-         font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";}
-    .wrap{max-width:980px;margin:0 auto;padding:24px}
-    header{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-    .title{font-size:clamp(24px,3vw,34px);font-weight:800;letter-spacing:.2px}
-    .badge{font-size:12px;color:var(--muted);border:1px solid #1e2636;border-radius:999px;padding:6px 10px;background:#0f1626}
-    .panel{background:linear-gradient(180deg,#0e1422,#0d1322);border:1px solid #1f2a3f;border-radius:18px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
-    .col-7{grid-column:span 7}
-    .col-5{grid-column:span 5}
-    @media (max-width:900px){.col-7,.col-5{grid-column:1/-1}}
-    h2{margin:0 0 10px;font-size:20px}
-    p{margin:8px 0 16px;color:var(--muted)}
-    .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;padding:12px 16px;border-radius:12px;font-weight:700;border:1px solid #1f2a3f;background:#121a2c;color:var(--text)}
-    .btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.25);}
-    .btn:focus{outline:3px solid var(--ring)}
-    .btn.primary{background:linear-gradient(180deg,#1b2641,#18233b);border-color:#2a3a5a}
-    .btn.kofi{background:#29abe0;border-color:#29abe0}
-    .btn.kofi span{color:#00121a}
-    .btn.bmc{background:#ffd000;border-color:#ffd000;color:#0f0f0f}
-    .row{display:flex;gap:10px;flex-wrap:wrap}
-    .hint{font-size:12px;color:var(--muted)}
-    footer{margin:30px 0 10px;color:#7f93b4;font-size:12px}
-    code{background:#0c1527;color:#c9defa;padding:2px 6px;border-radius:6px}
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 50%, #000 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3rem;
+    }
+
+    header.page-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    header.page-header h1 {
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      letter-spacing: 0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    header.page-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    main {
+      display: grid;
+      gap: 1.75rem;
+    }
+
+    section {
+      background: linear-gradient(145deg, #020617, #020617);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.4rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, var(--accent-soft), transparent 55%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    section > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    section h2 span.badge {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      color: var(--accent);
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .section-description {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    ul.link-list {
+      list-style: none;
+      margin-top: 0.7rem;
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    .link-list li a,
+    .inline-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 0.7rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: var(--accent);
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      transition: background 0.16s ease, transform 0.16s ease,
+        border-color 0.16s ease, box-shadow 0.16s ease;
+      width: fit-content;
+    }
+
+    .link-list li a:hover,
+    .inline-links a:hover {
+      background: rgba(15, 23, 42, 0.9);
+      transform: translateY(-1px);
+      border-color: rgba(56, 189, 248, 0.7);
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.2);
+    }
+
+    .link-label {
+      font-weight: 500;
+    }
+
+    .link-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .inline-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 0.7rem;
+    }
+
+    .tip-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 2.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      opacity: 0.8;
+    }
+
+    @media (min-width: 768px) {
+      section {
+        padding: 1.8rem 1.7rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="title">Support & Download</div>
-      <div class="badge">Publicly pseudonymous · Secure checkout</div>
+  <div class="page">
+    <header class="page-header">
+      <!-- Replace this with your main page title -->
+      <h1>Project / Solution Title</h1>
+      <!-- Replace this with a short tagline or description of the repository -->
+      <p>Short one-line description of what this GitHub Page / solution is about.</p>
     </header>
 
-    <div class="grid" style="margin-top:18px">
-      <section class="panel col-7" aria-labelledby="download">
-        <h2 id="download">Download the solution</h2>
-        <p>Instant access. If you’d like, add a tip during checkout or afterwards.</p>
-        <!-- If you host the file on GitHub Releases, point here. Example: -->
-        <div class="row">
-          <a class="btn primary" href="https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO/releases/latest" target="_blank" rel="noopener">
-            <span>⬇️ Download on GitHub Releases</span>
+    <main>
+      <!-- 1) Solution / Description Section -->
+      <section id="solution">
+        <h2>
+          Solution Overview
+          <span class="badge">Section 1</span>
+        </h2>
+        <p class="section-description">
+          <!-- Dummy text – overwrite with your own explanation of the page / solution -->
+          This section is where you describe what this page is about, what problem it solves,
+          and any important background information. Replace this paragraph with your own text.
+        </p>
+      </section>
+
+      <!-- 2) Files Section (4 PDFs + 1 HTML link) -->
+      <section id="files">
+        <h2>
+          Files
+          <span class="badge">Section 2</span>
+        </h2>
+        <p class="section-description">
+          <!-- Dummy text – optional, overwrite or remove -->
+          Below are the main downloadable files related to this project. Update the filenames and
+          paths to match your repository structure.
+        </p>
+
+        <ul class="link-list">
+          <!-- Replace href and visible labels with your real PDF files -->
+          <li>
+            <a href="files/document-1.pdf">
+              <span class="link-label">Document 1 (PDF)</span>
+              <span class="link-meta">files/document-1.pdf</span>
+            </a>
+          </li>
+          <li>
+            <a href="files/document-2.pdf">
+              <span class="link-label">Document 2 (PDF)</span>
+              <span class="link-meta">files/document-2.pdf</span>
+            </a>
+          </li>
+          <li>
+            <a href="files/document-3.pdf">
+              <span class="link-label">Document 3 (PDF)</span>
+              <span class="link-meta">files/document-3.pdf</span>
+            </a>
+          </li>
+          <li>
+            <a href="files/document-4.pdf">
+              <span class="link-label">Document 4 (PDF)</span>
+              <span class="link-meta">files/document-4.pdf</span>
+            </a>
+          </li>
+
+          <!-- HTML file link -->
+          <li>
+            <a href="pages/extra-page.html">
+              <span class="link-label">Extra HTML Page</span>
+              <span class="link-meta">pages/extra-page.html</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 3) Tip-Jar Section (BMC + Ko-Fi links) -->
+      <section id="tip-jar">
+        <h2>
+          Tip-jar
+          <span class="badge">Section 3</span>
+        </h2>
+        <p class="tip-text">
+          <!-- Dummy text – overwrite this with your own message -->
+          If you find this project useful and would like to support my work, you can leave a tip
+          using one of the platforms below. Thank you for your support!
+        </p>
+
+        <div class="inline-links">
+          <!-- Replace with your actual BMC link -->
+          <a href="https://www.buymeacoffee.com/yourusername" target="_blank" rel="noopener noreferrer">
+            <span class="link-label">Buy Me a Coffee</span>
+          </a>
+
+          <!-- Replace with your actual Ko-fi link -->
+          <a href="https://ko-fi.com/yourusername" target="_blank" rel="noopener noreferrer">
+            <span class="link-label">Ko-fi</span>
           </a>
         </div>
-        <p class="hint">You can mirror the download behind a Pay‑what‑you‑want checkout instead—see the Stripe / Ko‑fi buttons.</p>
       </section>
 
-      <section class="panel col-5" aria-labelledby="tip">
-        <h2 id="tip">Tip jar (one‑tap)</h2>
-        <p>Pick any amount. Cards and wallets supported. No account required for most methods.</p>
-        <div class="row">
-          <!-- Stripe Payment Link (PWYW): create a Payment Link and paste the URL below -->
-          <a class="btn" href="https://buy.stripe.com/YOUR_PAYMENT_LINK_CAD" target="_blank" rel="noopener">💳 Tip via Stripe (CAD)</a>
-          <!-- Duplicate in USD for U.S. visitors if you like -->
-          <a class="btn" href="https://buy.stripe.com/YOUR_PAYMENT_LINK_USD" target="_blank" rel="noopener">💳 Tip via Stripe (USD)</a>
-        </div>
-        <div class="row" style="margin-top:10px">
-          <!-- PayPal: simplest is PayPal.Me; replace with your link. Or use the Donate SDK embed instead. -->
-          <a class="btn" href="https://www.paypal.me/YOUR_PAYPAL_HANDLE" target="_blank" rel="noopener">🅿️ Tip via PayPal</a>
-        </div>
-        <p class="hint">Prefer a floating PayPal Donate button? Use the PayPal Donate SDK instead of a simple link.</p>
+      <!-- 4) Extra Section (1 HTML + 3 PDFs) -->
+      <section id="extra-files">
+        <h2>
+          Additional Resources
+          <span class="badge">Section 4</span>
+        </h2>
+        <p class="section-description">
+          <!-- Dummy text – overwrite as needed -->
+          This section can be used for additional files, documentation, or related resources.
+          Update the links to match your actual files.
+        </p>
+
+        <ul class="link-list">
+          <!-- HTML page link -->
+          <li>
+            <a href="pages/another-page.html">
+              <span class="link-label">Another HTML Page</span>
+              <span class="link-meta">pages/another-page.html</span>
+            </a>
+          </li>
+
+          <!-- PDF links -->
+          <li>
+            <a href="files/appendix-1.pdf">
+              <span class="link-label">Appendix 1 (PDF)</span>
+              <span class="link-meta">files/appendix-1.pdf</span>
+            </a>
+          </li>
+          <li>
+            <a href="files/appendix-2.pdf">
+              <span class="link-label">Appendix 2 (PDF)</span>
+              <span class="link-meta">files/appendix-2.pdf</span>
+            </a>
+          </li>
+          <li>
+            <a href="files/appendix-3.pdf">
+              <span class="link-label">Appendix 3 (PDF)</span>
+              <span class="link-meta">files/appendix-3.pdf</span>
+            </a>
+          </li>
+        </ul>
       </section>
-    </div>
-
-    <section class="panel" aria-labelledby="alt">
-      <h2 id="alt">Also available here (links point back to the same checkout)</h2>
-      <p>These pages exist only to capture supporters who already use these platforms. They all redirect back to your single checkout/download.</p>
-      <div class="row">
-        <a class="btn kofi" href="https://ko-fi.com/YOUR_KOFI_USERNAME" target="_blank" rel="noopener"><span>☕ Support on Ko‑fi</span></a>
-        <a class="btn bmc" href="https://www.buymeacoffee.com/YOUR_BMC_USERNAME" target="_blank" rel="noopener"><span>Buy Me a Coffee</span></a>
-      </div>
-      <p class="hint">On those pages, show one big button: <em>“Download & tip here”</em> → this site / your Stripe Payment Link.
-      Don’t upload files there. Keep one canonical download to simplify updates.</p>
-    </section>
-
-    <section class="panel" aria-labelledby="privacy">
-      <h2 id="privacy">Privacy notes</h2>
-      <ul>
-        <li>Payments are processed by Stripe/PayPal. Receipts and card statements may display your business/trading name.</li>
-        <li>Use a business display name on PayPal/Stripe to avoid showing a personal name to supporters.</li>
-      </ul>
-      <p class="hint">Tip: append <code>?utm_source=github&utm_medium=button</code> to links to learn which buttons convert.</p>
-    </section>
+    </main>
 
     <footer>
-      Built with GitHub Pages. Replace <code>YOUR_…</code> placeholders and push this file to <code>username.github.io</code>.
+      <!-- Optional footer – adjust or remove -->
+      <p>&copy; <span id="year"></span> Your Name or Project. All rights reserved.</p>
     </footer>
   </div>
+
+  <script>
+    // Auto-update the year in the footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
