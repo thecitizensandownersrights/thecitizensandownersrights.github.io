@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>All files</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.1);
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-subtle: #1f2937;
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 50%, #000 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3rem;
+    }
+
+    header.page-header {
+      margin-bottom: 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .brand-logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 24px;
+      object-fit: contain;
+      border: 1px solid var(--border-subtle);
+      background: #020617;
+      padding: 0.25rem;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.8);
+    }
+
+    .brand-text h1 {
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      letter-spacing: 0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    .brand-text p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 32rem;
+    }
+
+    main {
+      display: grid;
+      gap: 1.75rem;
+      margin-top: 0.5rem;
+    }
+
+    section {
+      background: linear-gradient(145deg, #020617, #020617);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.4rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, var(--accent-soft), transparent 55%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    section > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    section h2 span.badge {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      color: var(--accent);
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .section-description {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    ul.link-list {
+      list-style: none;
+      margin-top: 0.7rem;
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    .link-list li a {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: var(--accent);
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      transition: background 0.16s ease, transform 0.16s ease,
+        border-color 0.16s ease, box-shadow 0.16s ease;
+      width: fit-content;
+    }
+
+    .link-list li a:hover {
+      background: rgba(15, 23, 42, 0.9);
+      transform: translateY(-1px);
+      border-color: rgba(56, 189, 248, 0.7);
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.2);
+    }
+
+    .link-label {
+      font-weight: 500;
+    }
+
+    .tip-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .tip-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+      align-items: center;
+    }
+
+    .tip-buttons a {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 0.1rem;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.8);
+      transition: transform 0.16s ease, box-shadow 0.16s ease,
+        border-color 0.16s ease, background 0.16s ease;
+    }
+
+    .tip-buttons a:hover {
+      transform: translateY(-1px) scale(1.01);
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.25);
+      border-color: rgba(56, 189, 248, 0.7);
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .tip-logo {
+      display: block;
+      height: 48px;
+      width: auto;
+      border-radius: 999px;
+    }
+
+    footer {
+      margin-top: 2.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      opacity: 0.8;
+    }
+  
+    .footer-links {
+      display: flex;
+      gap: 0.5rem;      /* space between buttons */
+      flex-wrap: wrap;  /* optional: allow wrapping on small screens */
+    }
+    
+    .footer-links .btn {
+      display: inline-block;  /* make sure they behave like inline buttons */
+    }
+
+    @media (min-width: 768px) {
+      section {
+        padding: 1.8rem 1.7rem;
+      }
+
+      header.page-header {
+        justify-content: flex-start;
+        text-align: left;
+      }
+
+      .brand-text p {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="page-header">
+      <!-- Replace with your own 120x120 logo -->
+      <img
+        src="Decentralization of Democracy.png"
+        alt="Site logo"
+        class="brand-logo"
+        width="120"
+        height="120"
+      />
+
+      <div class="brand-text">
+        <!-- Replace this with your main page title -->
+        <h1>The Citizens'/Owners' Rights</h1>
+        <p></p>
+      </div>
+    </header>
+
+    <main>
+      <section id="Intro">
+        <h2>
+          Intro
+        </h2>
+        <p class="section-description">
+        </p>
+
+        <ul class="link-list">
+          <li>
+            <a href="00 List of Documents.pdf">
+              <span class="link-label">(00) List of Documents/quick Overview (PDF)</span>
+            </a>
+          </li>
+          <li>
+            <a href="10 Decentralization of Democracy.pdf">
+              <span class="link-label">(10) Decentralization of Democracy (PDF)</span>
+            </a>
+          </li>
+          <li>
+            <a href="11 Users, Use Cases.pdf">
+              <span class="link-label">(11) Users, Use Cases (PDF)</span>
+            </a>
+          </li>
+          <li>
+            <a href="12 Usage, Best Practice.pdf">
+              <span class="link-label">(12) Usage, Best Practice (PDF)</span>
+            </a>
+          </li>
+          <li>
+            <a href="20 The Citizens Owners Rights List.pdf">
+              <span class="link-label">(20) The Citizens'/Owners' Rights List (PDF)</span>
+            </a>
+          </li>
+
+        </ul>
+      </section>
+
+      <section id="Theframework">
+        <h2>
+          The framework
+        </h2>
+        <p class="section-description">
+        </p>
+
+        <ul class="link-list">
+          <li>
+            <a href="30 The Citizens Owners Rights Overview.pdf">
+              <span class="link-label">(30) The citizens’ (owners’) rights overview (PDF)</span>
+            </a>
+          </li>
+          <li>
+            <a href="31 The Citizens Owners Rights Framework.pdf">
+              <span class="link-label">(31) The citizens’ (owners’) rights framework (PDF)</span>
+            </a>
+          </li>
+          <li>
+            <a href="32 The Citizens Owners Rights Framework Attachments.pdf">
+              <span class="link-label">(32) The citizens’ (owners’) rights framework attachments (PDF)</span>
+            </a>
+          </li>
+          <li>
+            <a href="40 How to Try to Enforce Your Rights and Make a Complaint.pdf">
+              <span class="link-label">(40) How to Try to Enforce Your Rights and Make a Complaint (PDF)</span>
+            </a>
+          </li>
+          <li>
+            <a href="41 The Frameworks Relation to Constitution, Laws, Decrees.pdf">
+              <span class="link-label">(41) The frameworks’ relation to constitution, laws, decrees (PDF)</span>
+            </a>
+          </li>
+
+        </ul>
+      </section>
+
+      <section id="other">
+        <h2>
+          Future, terms, copyright, disclaimer
+        </h2>
+        <p class="section-description">
+        </p>
+
+        <ul class="link-list">
+          <li>
+            <a href="50 Future Steps.pdf">
+              <span class="link-label">(50) Future steps (PDF)</span>
+            </a>
+          </li>
+          <li>
+            <a href="51 Terms of Use.pdf">
+              <span class="link-label">(51) Terms of Use (PDF)</span>
+            </a>
+          </li>
+          <li>
+            <a href="52 Copyright, Licensing.pdf">
+              <span class="link-label">(52) Copyright, licensing (PDF)</span>
+            </a>
+          </li>
+          <li>
+            <a href="53 Disclaimer.pdf">
+              <span class="link-label">(53) Disclaimer (PDF)</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+  </div>
+
+  <script>
+    // Auto-update the year in the footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
